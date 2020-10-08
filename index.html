@@ -30,9 +30,6 @@
       function findAlbum() {
           var req = new XMLHttpRequest();
           req.addEventListener("load", function result(event) {
-            if(!DZ.getLoginStatus()) {
-              return login()
-            }
             const selected = JSON.parse(req.response)
             console.log(selected)
             DZ.player.playAlbum(selected.id, false, function() {
@@ -60,12 +57,8 @@
         })
       }
       function onPlayerLoaded() {
-        if(DZ.getLoginStatus()) {
-          infinity()
-          findAlbum()
-        } else {
-          login()
-        }
+        infinity()
+        findAlbum()
       }
       document.addEventListener("DOMContentLoaded", function(event) {
         DZ.init({

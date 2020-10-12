@@ -82,7 +82,7 @@ window.dzAsyncInit = function () {
     return getLoginStatus()
   })
   DZ.init({
-    appId: '439382',
+    appId: '438782',
     channelUrl: 'https://audile.app/channel.html',
     player: {
       container: 'player',
